@@ -27,6 +27,7 @@ available_locales = [
 ]
 
 # API Keys for url2png.com
+use_url2png = False
 url2png = dict(
     user = 'USERNAME',
     password = 'PASSWORD',

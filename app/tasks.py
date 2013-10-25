@@ -40,7 +40,7 @@ def stats_cron():
 @csrf_exempt
 def fetch_preview():
     page = Page.get_or_404(request.form.get('page_key', ''))
-    if 'localhost' in page.url or '127.0.0.1' in page.url:
+    if 'localhost' in page.url or '127.0.0.1' in page.url or use_url2png is False:
         return 'OK'
     url = 'http:' + url2png(page.url)
     result = urlfetch.fetch(url, deadline=10)

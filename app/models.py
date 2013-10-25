@@ -226,6 +226,7 @@ class Page(db.Model):
             page = Page.get_by_id(int(key))
         else:
             try:
+                key = str(key)
                 key_obj = db.Key(key)
             except BadKeyError:
                 abort(404)

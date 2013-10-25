@@ -10,8 +10,8 @@ adjust_sys_path()
 if settings.debug:
     adjust_sys_path('ziplibs')
     # Enable ctypes for Jinja debugging
-    from google.appengine.tools.dev_appserver import HardenedModulesHook
-    HardenedModulesHook._WHITE_LIST_C_MODULES += ['_ctypes', 'gestalt']
+    # from google.appengine.tools.dev_appserver import HardenedModulesHook
+    # HardenedModulesHook._WHITE_LIST_C_MODULES += ['_ctypes', 'gestalt']
 else:
     adjust_sys_path(os.path.join('ziplibs.zip', 'ziplibs'))
 

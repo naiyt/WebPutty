@@ -222,11 +222,10 @@ class Page(db.Model):
     @staticmethod
     def get_or_404(key):
         page = None
-        if isinstance(key, int) or (isinstance(key, basestring) and key.isdigit()):
+        if isinstance(key, long) or isinstance(key, int) or (isinstance(key, basestring) and key.isdigit()):
             page = Page.get_by_id(int(key))
         else:
             try:
-                key = str(key)
                 key_obj = db.Key(key)
             except BadKeyError:
                 abort(404)
